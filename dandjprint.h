@@ -12,6 +12,6 @@
 #define SYS_DANDJPRINT 333
 
 static inline
-long dandjrpint(void) {
+long dandjprint(void) {
 	return syscall(SYS_DANDJPRINT);
 }
