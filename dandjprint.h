@@ -1,5 +1,5 @@
 /* 
- * What: /usr/include/DANDJPRINT.h
+ * What: /usr/include/dandjprint.h
  * Who: Drew Smits and Jason Pruim
  * What: Kernel Project, CS 232
  * Where: Calvin College
@@ -12,6 +12,6 @@
 #define SYS_DANDJPRINT 333
 
 static inline
-long DANDJPRINT(void) {
+long dandjrpint(void) {
 	return syscall(SYS_DANDJPRINT);
 }
