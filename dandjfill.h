@@ -1,5 +1,5 @@
 /* 
- * What: /usr/include/DANDJFILL.h
+ * What: /usr/include/dandjfill.h
  * Who: Drew Smits and Jason Pruim
  * What: Kernel Project, CS 232
  * Where: Calvin College
@@ -9,9 +9,9 @@
 #include <unistd.h>
 #include <sys/syscall.h>
 
-#define SYS_DANDJFILL 334
+#define SYS_dandjfill 334
 
 static inline
-long DANDJPRINT(void) {
-	return syscall(SYS_DANDJFILL);
+long dandjfill(void) {
+	return syscall(SYS_dandjfill);
 }
