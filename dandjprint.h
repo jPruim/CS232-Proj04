@@ -1,17 +1,14 @@
-/* 
- * What: /usr/include/dandjprint.h
- * Who: Drew Smits and Jason Pruim
- * What: Kernel Project, CS 232
- * Where: Calvin College
- * When: April 2019.
+/* dandjTester.c tests the dandjprint, dandjfill, dandjfill2 system calls.
+ * Drew Smits and Jason Pruim, for the Kernel Project,
+ * CS 232 at Calvin College, April 2019.
  */
 
-#include <unistd.h>
-#include <sys/syscall.h>
+#include <stdio.h>
+#include <dandjprint.h>
 
-#define SYS_DANDJPRINT 333
-
-static inline
-long dandjprint(void) {
-	return syscall(SYS_DANDJPRINT);
+int main(){
+	printf("Invoking print system call...\n");
+	long result = dandjprint();
+	printf("Print system call returned %ld\n", result);
+	return 0;
 }
