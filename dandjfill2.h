@@ -3,7 +3,7 @@
  * Who: Drew Smits and Jason Pruim
  * What: Kernel Project, CS 232
  * Where: Calvin College
- * When: April, 17 2019.
+ * When: April 2019.
  */
 
 #include <unistd.h>
@@ -12,6 +12,6 @@
 #define SYS_DANDJFILL2 335
 
 static inline
-long dandjfill2(void) {
-	return syscall(SYS_DANDJFILL2);
+long dandjfill2(char* buf, int n) {
+	return syscall(SYS_DANDJFILL,buf, n);
 }
