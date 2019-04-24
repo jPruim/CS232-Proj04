@@ -14,8 +14,18 @@ int main(){
 	printf("Print system call returned %ld\n", result);
 	printf("Invoking fill system call...\n");
 	char myName[20];
-	long result = dandjfill(myName);
-	printf(myName);
+	result = dandjfill(myName,20);
+	char checkName[5] = "dandj";
+	int i;
+	int failed = 0;
+	for(i=0;i<5;i++){
+		if(checkName[i]!=myName[i]) failed = 1;
+	}
+	if(failed){
+		printf("Failed to pass name back");
+		return -1;
+	}
+	printf("Name passed back successfully\n");
 	printf("Print system call returned %ld\n", result);
 	return 0;
 }
