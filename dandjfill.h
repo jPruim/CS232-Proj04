@@ -12,6 +12,6 @@
 #define SYS_DANDJFILL 334
 
 static inline
-long dandjfill(char* name) {
-	return syscall(SYS_DANDJPRINT,name);
+long dandjfill(char* name, int n) {
+	return syscall(SYS_DANDJFILL,name, n);
 }
