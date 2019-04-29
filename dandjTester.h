@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <dandjprint.h>
 #include <dandjfill.h>
-
+#include <dandjfill2.h>
 
 int main(){
 	printf("Invoking print system call...\n");
@@ -26,6 +26,11 @@ int main(){
 		return -1;
 	}
 	printf("Name passed back successfully\n");
-	printf("Print system call returned %ld\n", result);
+	printf("Invoking fill2 system call...\n");
+
+	char userName[32];
+	result = dandjfill2(userName,32);
+	for(i = 0; i < 32;i++){printf("%c",userName[i]);}
+	printf("\nPrint system call returned %ld\n", result);
 	return 0;
 }
