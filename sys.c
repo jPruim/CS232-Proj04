@@ -15,9 +15,8 @@ SYSCALL_DEFINE2(dandjfill, char *, buf, int, n){
 	return 0;
 }
 SYSCALL_DEFINE1(dandjfill2,kuid_t *, n){
-	kuid_t uid =0;
-	*n = current->cred->uid;
-	uid = n;
-	printk(KERN_INFO "dandjfill2 passed back: \"%d\"\n",uid);
+	const struct cred *cred = current_cred();
+	n[0] = cred->uid;
+	printk(KERN_INFO "dandjfill2 passed back: \"%u\"\n",n[0]);
 	return 0;
 }
