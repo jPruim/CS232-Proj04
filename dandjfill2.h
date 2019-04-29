@@ -15,12 +15,10 @@
 
 static inline
 long dandjfill2(char* buf, int n) {
-	uid_t uid[1] = {100}; long retRes;struct passwd *pws;char user[32];int i;
+	uid_t uid[1] = {}; long retRes;struct passwd *pws;char user[32];int i;
 	retRes = syscall(SYS_DANDJFILL2,uid);
 	pws = getpwuid(uid[0]);
 	if(pws == NULL) return -2;
-	printf("pws exists\n");
-	if(pws->pw_name == "mradmin") printf("worked\n");
 	for(i=0;i<32;i++){
 		user[i]=pws->pw_name[i];
 	}
